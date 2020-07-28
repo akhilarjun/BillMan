@@ -1,0 +1,35 @@
+{
+  "name": "billman",
+  "version": "1.0.0",
+  "description": "A smart Invoice genrator and tracker",
+  "main": "index.js",
+  "scripts": {
+    "start:parcel": "parcel src/index.html",
+    "start": "node server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akhilarjun/BillMan.git"
+  },
+  "author": "Akhil Arjun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akhilarjun/BillMan/issues"
+  },
+  "homepage": "https://github.com/akhilarjun/BillMan#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-static-files-copy": "^2.4.3",
+    "sass": "^1.26.10"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "staticFiles": {
+    "staticPath": [{
+      "staticPath":"src/partial",
+      "staticOutDir":"partial"
+    }],
+    "watcherGlob": "**"
+  }
+}

@@ -1,0 +1,136 @@
+@import 'colors.scss';
+@import 'common.scss';
+
+.invoices-holder {
+    min-height: calc(100vh - 131px);
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 30% 1fr;
+
+    .title-inset{
+        @extend .title;
+        display: flex;
+
+        .action-btns {
+            margin-left: auto;
+
+            button {
+                background: $light-gray;
+                padding: 7px 14px;
+                margin-right: 5px;
+                border: none;
+                border-radius: 3px;
+                color: $dark-gray;
+                font-weight: 500;
+                cursor: pointer;
+                outline: none;
+                transition: all 400ms;
+                &:hover {
+                    background: darken($light-gray, 10%);
+                }
+                &.primary {
+                    color: $mute-white;
+                    background: $royal-blue;
+                    &:hover {
+                        background: darken($royal-blue, 10%);
+                    }
+                }
+                &.danger {
+                    color: $mute-white;
+                    background: $danger;
+                    &:hover {
+                        background: darken($danger, 10%);
+                    }
+                }
+            }
+        }
+    }
+
+    .invoice-list {
+        border-right: 1px solid $light-gray;
+
+        .list {
+            .invoice-card {
+                padding: 10px;
+                display: grid;
+                grid-template-columns: 1fr auto;
+                grid-template-rows: auto auto;
+                transition: all 400ms;
+                border-bottom: 1px solid $light-gray;
+                cursor: pointer;
+                &:hover, &.active {
+                    background: $light-gray;
+                }
+
+                .invoice-to-label {
+                    font-size: 2rem;
+                    font-weight: 500;
+                    color: $primary;
+                }
+
+                .invoice-amount {
+                    color: $dark-gray;
+                    font-size: 2.2rem;
+                    text-align: right;
+                }
+
+                .invoice-number {
+                    color: $mute-gray;
+                    font-size: 1.3rem;
+                }
+
+                .invoice-last-action{
+                    font-size: 1.3rem;
+                    text-align: right;
+                }
+            }
+        }
+    }
+
+    .invoice-wrapper {
+        padding: 50px 20px;
+        overflow-y: auto;
+        max-height: calc(100vh - 250px);
+        .invoice{
+            background: white;
+            box-shadow: 0 3px 7px $mute-gray;
+            .invoice-row {
+                display: grid;
+                grid-template-columns: auto auto;
+                align-items: center;
+            }
+            .row-cell {
+                padding: 20px 50px;
+            }
+            img {
+                height: 100px;
+            }
+            .boldtext {
+                font-weight: bold;
+                font-size: 1.8rem;
+            }
+            .lighttext {
+                font-weight: 500;
+                color: $mute-gray;
+            }
+            .biggesttext {
+                font-size: 3rem;
+                font-weight: 300;
+            }
+            table {
+                width: 100%;
+                text-align: left;
+                border-collapse: collapse;
+            }
+            table, td, tr, th {
+                border: 1px solid $light-gray;
+                padding: 5px;
+            }
+            th {
+                background: $royal-blue;
+                color: $mute-white;
+                border: 1px solid $royal-blue;
+            }
+        }
+    }
+}

@@ -1,0 +1,70 @@
+@import 'colors.scss';
+
+html {
+    font-size: 10px;
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+        min-height: 100vh;
+        background: $mute-white;
+        display: grid;
+        grid-template-rows: auto 1fr;
+        grid-template-columns: auto 1fr;
+        font-size: 1.5rem;
+        overflow: hidden;
+        grid-template-areas: 
+            'brand header'
+            'leftdrawer appbody';
+
+        .brand {
+            grid-area: brand;
+            background-color: $dark;
+            img {
+                height: 80px;
+                display: block;
+                margin: auto;
+                cursor: pointer;
+            }
+        }
+
+        .header {
+            grid-area: header;
+            background: $mute-white;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            border-bottom: 1px solid $light-gray;
+            img {
+                margin: 0 20px 0 0;
+                cursor: pointer;
+            }
+        }
+
+        .left-drawer {
+            grid-area: leftdrawer;
+            background: $dark;
+            a {
+                text-decoration: none;
+                display: block;
+                color: $mute-white;
+                cursor: pointer;
+                padding: 7px 40px;
+                transition: all 400ms;
+                img {
+                    vertical-align: sub;
+                    margin-right: 10px;
+                }
+                &.active {
+                    background-color: $dark-gray;
+                }
+            }
+        }
+
+        .app-body {
+            grid-area: appbody;
+            background: $mute-white;
+        }
+    }
+}
