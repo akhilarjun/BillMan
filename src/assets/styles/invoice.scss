@@ -50,6 +50,8 @@
         border-right: 1px solid $light-gray;
 
         .list {
+            overflow-y: auto;
+            max-height: calc(100vh - 160px);
             .invoice-card {
                 padding: 10px;
                 display: grid;
